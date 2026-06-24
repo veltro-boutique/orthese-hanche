@@ -1,0 +1,1056 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ceinture de Maternité Confort+ | Soulage le dos</title>
+  <meta name="description" content="Ceinture de maternité réglable pour soutenir le ventre et aider à soulager le dos pendant la grossesse. Commande rapide sur WhatsApp.">
+
+  <!--
+    META PIXEL
+    Collez ici le code complet de votre Meta Pixel.
+    Le script en bas déclenche Lead au clic sur Commander.
+  -->
+
+  <style>
+    :root {
+      --cream: #f8f3e6;
+      --paper: #fffefa;
+      --ink: #171717;
+      --muted: #6b6a64;
+      --line: #e9e3d4;
+      --soft: #f4eee1;
+      --black: #080808;
+      --red: #ef3f3f;
+      --pink: #f7b7b9;
+      --green: #1b7f5d;
+      --max: 430px;
+      --radius: 6px;
+      --shadow: 0 10px 24px rgba(22, 20, 15, .08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(239, 63, 63, .45);
+      outline-offset: 3px;
+    }
+
+    .page {
+      width: min(100%, var(--max));
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 0 0 1px rgba(233, 227, 212, .85);
+      padding-bottom: 82px;
+    }
+
+    .top-note {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      min-height: 38px;
+      padding: 6px 10px;
+      background: #111111;
+      color: #ffffff;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, .14);
+    }
+
+    .top-note-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      min-width: 0;
+      font-size: .7rem;
+      font-weight: 900;
+      line-height: 1.12;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .top-note-discount {
+      flex: 0 0 auto;
+      padding: 3px 5px;
+      background: var(--red);
+      color: #ffffff;
+      border-radius: 999px;
+      font-size: .68rem;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .promo-timer {
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .promo-timer span {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      min-height: 24px;
+      padding: 3px 5px;
+      background: #ffffff;
+      color: var(--ink);
+      border-radius: 5px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .promo-timer strong {
+      color: var(--red);
+      font-size: .86rem;
+      line-height: 1;
+    }
+
+    .promo-timer small {
+      color: var(--muted);
+      font-size: .58rem;
+      text-transform: lowercase;
+    }
+
+    .product {
+      padding: 12px 12px 16px;
+      background: #ffffff;
+    }
+
+    .hero-image {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 0;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border: 1px solid #efefef;
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 50% 24%, rgba(255, 255, 255, .9), transparent 26%),
+        linear-gradient(180deg, #fafafa 0%, #f1f1ee 100%);
+    }
+
+    .sale-tag {
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      color: #ffffff;
+      background: #ff6c18;
+      border-radius: 8px 8px 8px 0;
+      box-shadow: 0 10px 18px rgba(255, 108, 24, .25);
+      font-size: .9rem;
+      font-weight: 900;
+      transform: rotate(-7deg);
+    }
+
+    .comb-visual {
+      width: 84%;
+      max-width: 330px;
+      height: auto;
+      filter: drop-shadow(0 18px 16px rgba(0, 0, 0, .18));
+    }
+
+    .hero-photo,
+    .thumb img,
+    .lifestyle img,
+    .face-card img,
+    .mini-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero-photo {
+      object-position: center;
+    }
+
+    .thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin: 10px 0 14px;
+    }
+
+    .thumb {
+      display: grid;
+      place-items: center;
+      min-height: 66px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #f7f3ed;
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .thumb.active {
+      border: 2px solid var(--black);
+    }
+
+    .thumb svg,
+    .thumb img {
+      width: 100%;
+      height: 66px;
+      display: block;
+    }
+
+    .title {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+      line-height: 1.16;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .price-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 8px 0 10px;
+    }
+
+    .old-price {
+      color: #74716b;
+      font-weight: 800;
+      text-decoration: line-through;
+    }
+
+    .new-price {
+      color: var(--red);
+      font-size: 1.25rem;
+      font-weight: 900;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 9px;
+      color: #ffffff;
+      background: var(--black);
+      border-radius: 999px;
+      font-size: .72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .bullets {
+      margin: 10px 0 14px;
+      padding: 0;
+      list-style: none;
+      color: #43413c;
+      font-size: .92rem;
+    }
+
+    .bullets li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 7px;
+      margin: 5px 0;
+    }
+
+    .bullets li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      margin-top: 7px;
+      background: var(--black);
+      border-radius: 50%;
+    }
+
+    .whatsapp-btn {
+    background: #25D366;
+    color: white;
+    gap: 10px;
+    }
+
+   .whatsapp-btn:hover {
+    background: #22c55e;
+   }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 16px;
+      color: #ffffff;
+      background: var(--black);
+      border: 0;
+      border-radius: 999px;
+      font-size: .96rem;
+      font-weight: 900;
+      letter-spacing: .02em;
+      text-decoration: none;
+      text-transform: uppercase;
+      box-shadow: 0 12px 20px rgba(0, 0, 0, .18);
+    }
+
+    .cta:hover {
+      background: #2a2a2a;
+    }
+
+    .notice {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 8px 10px;
+      border: 1px solid #f1b2b2;
+      border-radius: 999px;
+      background: #fff4f4;
+      color: #9b2222;
+      font-size: .76rem;
+      font-weight: 800;
+    }
+
+    .notice-dot {
+      display: grid;
+      flex: 0 0 22px;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      color: #ffffff;
+      background: var(--red);
+      border-radius: 50%;
+      font-size: .78rem;
+      font-weight: 900;
+    }
+
+    .stock-gauge {
+      margin-top: 10px;
+      padding: 12px;
+      background: #fff7f7;
+      border: 1px solid #f1b2b2;
+      border-radius: var(--radius);
+    }
+
+    .stock-gauge-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: .82rem;
+      font-weight: 900;
+    }
+
+    .stock-gauge-head span:first-child {
+      color: #9b2222;
+      text-transform: uppercase;
+    }
+
+    .stock-gauge-head span:last-child {
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .stock-track {
+      height: 12px;
+      overflow: hidden;
+      background: #f2dede;
+      border-radius: 999px;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, .12);
+    }
+
+    .stock-fill {
+      display: block;
+      width: 18%;
+      height: 100%;
+      background: linear-gradient(90deg, #ef3f3f, #ff8a3d);
+      border-radius: inherit;
+    }
+
+    .stock-gauge p {
+      margin: 7px 0 0;
+      color: #7a2d2d;
+      font-size: .76rem;
+      font-weight: 800;
+    }
+
+    .mini-order {
+      display: grid;
+      grid-template-columns: 1fr 58px;
+      gap: 10px;
+      align-items: center;
+      margin: 12px 0;
+      padding: 8px;
+      background: #f9f7f2;
+      border-radius: var(--radius);
+    }
+
+    .mini-order strong {
+      display: block;
+      margin-bottom: 2px;
+      font-size: .86rem;
+    }
+
+    .mini-order span {
+      color: var(--muted);
+      font-size: .76rem;
+    }
+
+    .mini-photo {
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, #2e251f, #bd9177 54%, #f2d0bd);
+    }
+
+    .accordion {
+      border-top: 1px solid var(--line);
+    }
+
+    details {
+      border-bottom: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    summary {
+      position: relative;
+      min-height: 46px;
+      padding: 13px 34px 13px 4px;
+      list-style: none;
+      cursor: pointer;
+      font-size: .9rem;
+      font-weight: 900;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      color: #4c4a45;
+      font-size: 1.2rem;
+      transform: translateY(-50%);
+    }
+
+    details[open] summary::after {
+      content: "-";
+    }
+
+    details p {
+      margin: 0;
+      padding: 0 4px 13px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .split-photo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      padding: 12px;
+      background: var(--cream);
+    }
+
+    .lifestyle {
+      min-height: 210px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #e6c2a4;
+      position: relative;
+    }
+
+    .lifestyle svg,
+    .lifestyle img {
+      width: 100%;
+      height: 210px;
+      display: block;
+    }
+
+    .text-section {
+      padding: 24px 22px;
+      background: var(--paper);
+      text-align: center;
+    }
+
+    .text-section h2 {
+      margin: 0 0 10px;
+      font-size: 1.32rem;
+      line-height: 1.12;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .text-section p {
+      margin: 0 auto;
+      max-width: 330px;
+      color: #494640;
+      font-size: .93rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .stat {
+      min-height: 76px;
+      padding: 10px 8px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--black);
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .wide-image {
+      display: grid;
+      place-items: center;
+      min-height: 0;
+      overflow: hidden;
+      background: #f2ede3;
+    }
+
+    .wide-image svg,
+    .wide-image img {
+      width: 100%;
+      max-width: 430px;
+      height: auto;
+      display: block;
+    }
+
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: #ffffff;
+    }
+
+    .face-card {
+      min-height: 190px;
+      overflow: hidden;
+      background: #cba68f;
+    }
+
+    .face-card svg,
+    .face-card img {
+      width: 100%;
+      height: 190px;
+      display: block;
+    }
+
+    .order-box {
+      margin-top: 18px;
+      padding: 14px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: left;
+    }
+
+    .order-box label {
+      display: grid;
+      gap: 5px;
+      margin-bottom: 10px;
+      font-size: .84rem;
+      font-weight: 900;
+    }
+
+    .order-box input,
+    .order-box select {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid #d7d0c2;
+      border-radius: var(--radius);
+      padding: 10px;
+      background: #fffefa;
+    }
+
+    .form-error {
+      display: none;
+      margin: 0 0 10px;
+      padding: 8px 10px;
+      color: #9b2222;
+      background: #fff4f4;
+      border: 1px solid #f1b2b2;
+      border-radius: var(--radius);
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .form-error.show {
+      display: block;
+    }
+
+    .fixed-cta {
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      width: min(100%, var(--max));
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(255, 254, 250, .96);
+      border-top: 1px solid var(--line);
+      box-shadow: 0 -12px 22px rgba(0, 0, 0, .1);
+      transform: translateX(-50%);
+      backdrop-filter: blur(10px);
+    }
+
+    .fixed-price span {
+      display: block;
+      color: var(--muted);
+      font-size: .7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .fixed-price strong {
+      display: block;
+      color: var(--red);
+      font-size: 1.05rem;
+      line-height: 1.1;
+    }
+
+    .fixed-cta .cta {
+      width: auto;
+      min-height: 44px;
+      padding: 11px 17px;
+      font-size: .82rem;
+      white-space: nowrap;
+    }
+
+    @media (min-width: 700px) {
+      body {
+        padding: 28px 0;
+      }
+
+      .page {
+        border-radius: 12px;
+        overflow: clip;
+      }
+    }
+
+    @media (max-width: 340px) {
+      .top-note {
+        gap: 6px;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      .top-note-label {
+        font-size: .63rem;
+      }
+
+      .promo-timer {
+        gap: 3px;
+      }
+
+      .promo-timer span {
+        padding: 3px 4px;
+      }
+
+      .promo-timer strong {
+        font-size: .78rem;
+      }
+
+      .promo-timer small {
+        font-size: .53rem;
+      }
+
+      .fixed-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .fixed-cta .cta {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="top-note" aria-live="polite">
+      <span class="top-note-label">Promo juin <strong class="top-note-discount">-33%</strong> fini dans</span>
+      <div class="promo-timer" aria-label="Compte à rebours de l'offre">
+        <span><strong id="timerHours">00</strong><small>h</small></span>
+        <span><strong id="timerMinutes">00</strong><small>min</small></span>
+        <span><strong id="timerSeconds">00</strong><small>sec</small></span>
+      </div>
+    </div>
+
+    <section class="product" id="produit">
+      <!-- ==================================================
+PHOTO PRINCIPALE DU PRODUIT
+Remplacer : images/ceinture-principale.jpg
+================================================== -->
+      <div class="hero-image" aria-label="Photo principale de la ceinture de maternité">
+        <span class="sale-tag">-33%</span>
+        <img class="hero-photo" src="images/ceinture-principale.jpg" alt="Ceinture de maternité portée sous le ventre">
+      </div>
+
+      <!-- ==================================================
+GALERIE PHOTOS
+Modifier les 4 images de la galerie ici
+================================================== -->
+      <div class="thumbs" aria-label="Galerie produit">
+        <div class="thumb active">
+          <img src="images/ceinture-principale.jpg" alt="Vue principale de la ceinture">
+        </div>
+        <div class="thumb"><img src="images/ceinture-dos.jpg" alt="Vue de dos avec soutien lombaire"></div>
+        <div class="thumb"><img src="images/ceinture-face.jpg" alt="Vue de face avec soutien du ventre"></div>
+        <div class="thumb"><img src="images/ceinture-benefices.jpg" alt="Bénéfices de la ceinture de maternité"></div>
+      </div>
+
+      <!-- ==================================================
+TITRE PRODUIT
+Modifier uniquement le texte du H1
+================================================== -->
+      <h1 class="title">Ceinture de maternité Confort+ - Soulage le dos & soutient le ventre</h1>
+
+      <!-- ==================================================
+PRIX PRODUIT
+Modifier prix barré et prix promo
+================================================== -->
+      <div class="price-line" aria-label="Prix">
+        <span class="old-price">18 000 FCFA</span>
+        <span class="new-price">12 000 FCFA</span>
+        <span class="badge">Promo</span>
+      </div>
+
+      <!-- ==================================================
+AVANTAGES PRODUIT
+Chaque balise <li> = 1 avantage
+================================================== -->
+      <ul class="bullets">
+        <li>Aide à soulager le bas du dos pendant la grossesse.</li>
+        <li>Soutient le ventre lourd au quotidien, sans comprimer.</li>
+        <li>Maintien réglable qui s'adapte à votre morphologie.</li>
+        <li>Se porte facilement sous les vêtements, à la maison comme dehors.</li>
+      </ul>
+
+      <div class="stock-gauge" aria-label="Jauge de stock restant">
+        <div class="stock-gauge-head">
+          <span>Stock presque épuisé</span>
+          <span id="stockText">18% restant</span>
+        </div>
+        <div class="stock-track" aria-hidden="true">
+          <span class="stock-fill" id="stockFill"></span>
+        </div>
+        <p>Il ne reste plus beaucoup de pièces disponibles pour la promo de juin.</p>
+      </div>
+
+      <a class="cta js-whatsapp" href="#commande">Commander</a>
+
+      <div class="notice">
+        <span class="notice-dot">!</span>
+        <span>Très demandée cette semaine. Stock limité selon arrivage.</span>
+      </div>
+
+      <div class="mini-order">
+        <div>
+          <strong>Plusieurs futures mamans commandent ce modèle aujourd'hui.</strong>
+          <span>Commande confirmée sur WhatsApp avant livraison.</span>
+        </div>
+        <div class="mini-photo" aria-label="Miniature de la ceinture"><img src="images/ceinture-face.jpg" alt=""></div>
+      </div>
+
+      <!-- ==================================================
+FAQ
+Modifier questions et réponses ici
+================================================== -->
+      <div class="accordion">
+        <details>
+          <summary>Pourquoi ça soulage</summary>
+          <p>La ceinture répartit une partie du poids du ventre et aide à limiter la pression ressentie au niveau du bas du dos.</p>
+        </details>
+        <details>
+          <summary>Livraison gratuite</summary>
+          <p>La livraison est offerte pendant la promo. Les détails sont confirmés sur WhatsApp après votre demande.</p>
+        </details>
+        <details>
+          <summary>Satisfait ou remboursé</summary>
+          <p>Si le produit reçu présente un défaut visible, contactez-nous rapidement pour une solution ou un échange.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="split-photo" aria-label="Photos de la ceinture portée">
+      <div class="lifestyle">
+        <img src="images/ceinture-dos.jpg" alt="Ceinture de maternité portée de dos">
+      </div>
+      <div class="lifestyle">
+        <img src="images/ceinture-face.jpg" alt="Ceinture de maternité portée de face">
+      </div>
+    </section>
+
+    <section class="text-section">
+      <h2>Soulagez vos journées</h2>
+      <p>Quand le ventre devient lourd, la ceinture aide à mieux soutenir la zone abdominale et à réduire la tension ressentie dans le bas du dos.</p>
+      <div class="stats">
+        <div class="stat">
+          <strong>2e</strong>
+          <span>trimestre et plus</span>
+        </div>
+        <div class="stat">
+          <strong>0</strong>
+          <span>paiement maintenant</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="wide-image" aria-label="Bénéfices de la ceinture">
+      <img src="images/ceinture-benefices.jpg" alt="La ceinture soulage les douleurs de grossesse et soutient le ventre">
+    </section>
+
+    <section class="text-section">
+      <h2>Maintien confortable</h2>
+      <p>Le soutien réglable accompagne votre ventre sans serrer fort. Vous pouvez l'ajuster selon votre confort dans la journée.</p>
+    </section>
+
+    <section class="before-after" aria-label="Vues de la ceinture">
+      <div class="face-card">
+        <img src="images/ceinture-principale.jpg" alt="Ceinture vue de près">
+      </div>
+      <div class="face-card">
+        <img src="images/ceinture-dos.jpg" alt="Soutien lombaire de la ceinture">
+      </div>
+    </section>
+
+    <section class="text-section">
+      <h2>Détails rassurants</h2>
+      <p>La ceinture est ajustable, respirante et dotée d'un velcro résistant pour rester bien en place pendant vos mouvements.</p>
+    </section>
+
+    <section class="wide-image" aria-label="Détails de la ceinture">
+      <img src="images/ceinture-details.jpg" alt="Ceinture ajustable, tissu respirant et velcro résistant">
+    </section>
+
+    <section class="text-section">
+      <h2>Comment l'utiliser</h2>
+      <p>Placez la partie principale sous le ventre, faites le tour des hanches, puis ajustez les scratchs selon votre confort.</p>
+    </section>
+
+    <section class="wide-image" aria-label="Mode d'utilisation de la ceinture">
+      <img src="images/ceinture-utilisation.jpg" alt="Étapes pour utiliser la ceinture de maternité">
+    </section>
+
+    <section class="text-section" id="commande">
+      <h2>Commander sans risque</h2>
+      <p>Vous ne payez rien maintenant. La commande est confirmée sur WhatsApp, puis vous payez à la livraison.</p>
+
+      <!-- ==================================================
+FORMULAIRE COMMANDE
+Ajouter ou supprimer des champs ici
+================================================== -->
+      <div class="order-box">
+        <label for="qty">
+          Quantité
+          <select id="qty">
+            <option value="1" data-price="12000">1 ceinture - 12 000 FCFA</option>
+            <option value="2" data-price="22000">2 ceintures - 22 000 FCFA</option>
+            <option value="3" data-price="30000">3 ceintures - 30 000 FCFA</option>
+          </select>
+        </label>
+        <label for="name">
+          Nom complet
+          <input id="name" type="text" autocomplete="name" placeholder="Votre nom">
+        </label>
+        <label for="city">
+          Ville / quartier
+          <input id="city" type="text" autocomplete="address-level2" placeholder="Ex : Abidjan, Cocody">
+        </label>
+        <p class="form-error" id="formError">Merci de renseigner votre nom et votre ville.</p>
+        <button class="cta js-whatsapp" type="button">Commander sur WhatsApp</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================
+BOUTON FLOTTANT BAS D ECRAN
+Modifier prix et texte du bouton
+================================================== -->
+  <div class="fixed-cta" role="region" aria-label="Commander rapidement">
+    <div class="fixed-price">
+      <span>Prix promo</span>
+      <strong>12 000 FCFA</strong>
+    </div>
+    <a class="cta" href="#commande">Commander</a>
+  </div>
+
+  <script>
+    /* ==================================================
+CONFIGURATION GENERALE
+- WhatsApp
+- Nom du produit
+- Stock affiché
+================================================== */
+    const CONFIG = {
+      // Remplacez par votre numéro WhatsApp au format international, sans + ni espaces.
+      // Exemple Côte d'Ivoire : 2250700000000
+      whatsappNumber: "2250700000000",
+      productName: "Ceinture de Maternité Confort+",
+      currency: "XOF",
+      stockPercent: 18
+    };
+
+    const qty = document.getElementById("qty");
+    const nameInput = document.getElementById("name");
+    const cityInput = document.getElementById("city");
+    const formError = document.getElementById("formError");
+    const timerHours = document.getElementById("timerHours");
+    const timerMinutes = document.getElementById("timerMinutes");
+    const timerSeconds = document.getElementById("timerSeconds");
+    const stockText = document.getElementById("stockText");
+    const stockFill = document.getElementById("stockFill");
+
+    function selectedPrice() {
+      const option = qty.options[qty.selectedIndex];
+      return Number(option.dataset.price || 12000);
+    }
+
+    function formatFcfa(value) {
+      return new Intl.NumberFormat("fr-FR").format(value) + " FCFA";
+    }
+
+    function trackLead(value) {
+      if (typeof fbq === "function") {
+        fbq("track", "Lead", {
+          value: value,
+          currency: CONFIG.currency
+        });
+      }
+    }
+
+    function buildMessage() {
+      return [
+        "Bonjour, je veux commander :",
+        "",
+        "Produit : " + CONFIG.productName,
+        "Quantité : " + qty.value,
+        "Total : " + formatFcfa(selectedPrice()),
+        "Nom : " + nameInput.value.trim(),
+        "Ville / quartier : " + cityInput.value.trim()
+      ].join("\n");
+    }
+
+    function openWhatsApp() {
+      if (!nameInput.value.trim() || !cityInput.value.trim()) {
+        formError.classList.add("show");
+        document.getElementById("commande").scrollIntoView({ behavior: "smooth", block: "start" });
+        if (!nameInput.value.trim()) {
+          nameInput.focus();
+        } else {
+          cityInput.focus();
+        }
+        return;
+      }
+
+      formError.classList.remove("show");
+      trackLead(selectedPrice());
+
+      const message = encodeURIComponent(buildMessage());
+      const url = "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + message;
+      window.open(url, "_blank", "noopener");
+    }
+
+    function pad(value) {
+      return String(value).padStart(2, "0");
+    }
+
+    function updateTimer() {
+      const now = new Date();
+      const end = new Date(now);
+      end.setHours(23, 59, 59, 999);
+
+      const remaining = Math.max(0, end.getTime() - now.getTime());
+      const totalSeconds = Math.floor(remaining / 1000);
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      timerHours.textContent = pad(hours);
+      timerMinutes.textContent = pad(minutes);
+      timerSeconds.textContent = pad(seconds);
+    }
+
+    function updateStockGauge() {
+      const percent = Math.max(3, Math.min(100, CONFIG.stockPercent));
+      stockText.textContent = percent + "% restant";
+      stockFill.style.width = percent + "%";
+    }
+
+    document.querySelectorAll(".js-whatsapp").forEach(function(button) {
+      button.addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("commande").scrollIntoView({ behavior: "smooth", block: "start" });
+
+        if (button.closest(".order-box")) {
+          openWhatsApp();
+        }
+      });
+    });
+
+    updateStockGauge();
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
